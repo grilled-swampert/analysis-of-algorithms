@@ -1,0 +1,26 @@
+Number of elements: 5, Iterations: 3
+Number of elements: 5, Iterations: 3
+Number of elements: 1, Iterations: 1
+Number of elements: 2, Iterations: 2
+Number of elements: 10, Iterations: 4
+Number of elements: 25, Iterations: 5
+Number of elements: 50, Iterations: 6
+Number of elements: 75, Iterations: 7
+Number of elements: 100, Iterations: 7
+Number of elements: 200, Iterations: 8
+Number of elements: 300, Iterations: 9
+Number of elements: 400, Iterations: 9
+Number of elements: 500, Iterations: 9
+Number of elements: 750, Iterations: 10
+Number of elements: 1000, Iterations: 10
+Number of elements: 1250, Iterations: 11
+Number of elements: 1500, Iterations: 11
+Number of elements: 1500, Iterations: 11
+Number of elements: 1750, Iterations: 11
+Number of elements: 2000, Iterations: 11
+Number of elements: 2500, Iterations: 12
+Number of elements: 5000, Iterations: 12
+Number of elements: 7500, Iterations: 13
+Number of elements: 9000, Iterations: 14
+Number of elements: 10000, Iterations: 14
+
