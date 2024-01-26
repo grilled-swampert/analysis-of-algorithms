@@ -1,0 +1,15 @@
+Number of elements: 0, Iterations: 0
+Number of elements: 1, Iterations: 1
+Number of elements: 0, Iterations: 0
+Number of elements: 2, Iterations: 2
+Number of elements: 5, Iterations: 5
+Number of elements: 10, Iterations: 10
+Number of elements: 20, Iterations: 20
+Number of elements: 30, Iterations: 30
+Number of elements: 40, Iterations: 40
+Number of elements: 50, Iterations: 50
+Number of elements: 60, Iterations: 60
+Number of elements: 70, Iterations: 70
+Number of elements: 80, Iterations: 80
+Number of elements: 90, Iterations: 90
+Number of elements: 100, Iterations: 100
