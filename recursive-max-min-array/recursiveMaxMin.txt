@@ -1,0 +1,15 @@
+Size: 10, Time: 0.002 microseconds
+Size: 20, Time: 0.002 microseconds
+Size: 50, Time: 0.002 microseconds
+Size: 100, Time: 0.005 microseconds
+Size: 250, Time: 0.009 microseconds
+Size: 500, Time: 0.013 microseconds
+Size: 600, Time: 0.016 microseconds
+Size: 700, Time: 0.030 microseconds
+Size: 800, Time: 0.027 microseconds
+Size: 900, Time: 0.04 microseconds
+Size: 1000, Time: 0.042 microseconds
+Size: 1250, Time: 0.044 microseconds
+Size: 1500, Time: 0.047 microseconds
+Size: 1750, Time: 0.062 microseconds
+Size: 2000, Time: 0.06 microseconds
