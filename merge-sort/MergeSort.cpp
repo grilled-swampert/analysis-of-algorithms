@@ -1,4 +1,7 @@
 #include <iostream> 
+#include <fstream>
+#include <ctime>
+#include <iomanip>
 using namespace std; 
   
 void merge(int array[], int const left, int const mid, int const right) 
@@ -51,6 +54,14 @@ void mergeSort(int array[], int const begin, int const end)
     mergeSort(array, mid + 1, end); 
     merge(array, begin, mid, end); 
 } 
+
+int* generateArray(int size) {
+    int* data = new int[size];
+    for (int i = 0; i < size; ++i) {
+        data[i] = rand() % 1000;
+    }
+    return data;
+}
   
 void printArray(int array[], int size) 
 { 
@@ -61,15 +72,27 @@ void printArray(int array[], int size)
   
 int main() 
 { 
-    int array[] = { 34, 89, 22, 11, 78, 22, 9 }; 
-    auto array_size = sizeof(array) / sizeof(array[0]); 
+    srand(time(0)) ;
+    int size = rand() % 100;
+    cout << "Size of the array: " << size << endl; 
+
+    int* data = generateArray(size);
   
     cout << "Given array is "<<endl; 
-    printArray(array, array_size); 
-  
-    mergeSort(array, 0, array_size - 1); 
+    printArray(data, size); 
+    
+    clock_t start = clock();
+    mergeSort(data, 0, size - 1); 
+    clock_t end = clock();
+    double timeTaken = double(end - start) / CLOCKS_PER_SEC;
+    cout << "Time taken by the program: " << timeTaken << " seconds" << endl;
+
+    ofstream outFile("mergeSort.txt", ios::app);
+    outFile << fixed << setprecision(10);
+    outFile << "Size: " << size << ", Time: " << timeTaken << " seconds\n";
+    outFile.close();
   
     cout << "Sorted array is "<<endl; 
-    printArray(array, array_size); 
+    printArray(data, size); 
     return 0; 
 } 

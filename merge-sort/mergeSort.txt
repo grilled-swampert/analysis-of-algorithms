@@ -1,0 +1,15 @@
+Size: 4, Time: 1.7e-06 seconds
+Size: 8, Time: 2e-06 seconds
+Size: 12, Time: 3e-06 seconds
+Size: 18, Time: 5e-06 seconds
+Size: 20, Time: 5e-06 seconds
+Size: 24, Time: 5e-06 seconds
+Size: 29, Time: 4e-06 seconds
+Size: 34, Time: 5e-06 seconds
+Size: 38, Time: 6e-06 seconds
+Size: 61, Time: 1e-05 seconds
+Size: 78, Time: 1.3e-05 seconds
+Size: 76, Time: 1.2e-05 seconds
+Size: 63, Time: 9e-06 seconds
+Size: 83, Time: 1.8e-05 seconds
+Size: 98, Time: 2.1e-05 seconds

@@ -1,4 +1,7 @@
 #include <iostream>
+#include <fstream>
+#include <ctime>
+#include <iomanip>
 using namespace std;
 
 void swap(int *a, int *b) {
@@ -29,6 +32,14 @@ int partition(int array[], int left, int right) {
     return high;
 }
 
+int* generateArray(int size) {
+    int* data = new int[size];
+    for (int i = 0; i < size; ++i) {
+        data[i] = rand() % 1000;
+    }
+    return data;
+}
+
 void quickSort(int array[], int left, int right) {
     if (left < right) {
         int pi = partition(array, left, right);
@@ -38,16 +49,28 @@ void quickSort(int array[], int left, int right) {
 }
 
 int main() {
-    int data[] = {10, 5, 7, 12, 4, 31, 25, 89, -43};
-    int n = sizeof(data) / sizeof(data[0]);
+    srand(time(0)) ;
+    int size = 200;
+    cout << "Size of the array: " << size << endl; 
+
+    int* data = generateArray(size);
 
     cout << "Unsorted Array: \n";
-    printArray(data, n);
+    printArray(data, size);
     cout << "\n";
 
-    quickSort(data, 0, n - 1);
+    clock_t start = clock();
+    quickSort(data, 0, size - 1);
+    clock_t end = clock();
+    double timeTaken = double(end - start) / CLOCKS_PER_SEC;
+    cout << "Time taken by the program: " << timeTaken << " seconds" << endl;
+
+    ofstream outFile("quickSort.txt", ios::app);
+    outFile << fixed << setprecision(10);
+    outFile << "Size: " << size << ", Time: " << timeTaken << " seconds\n";
+    outFile.close();
 
     cout << "\n";
     cout << "Sorted array in ascending order: \n";
-    printArray(data, n);
+    printArray(data, size);
 }
