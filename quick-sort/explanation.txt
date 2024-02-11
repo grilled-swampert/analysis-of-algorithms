@@ -1,0 +1,35 @@
+the quick-sort algorithm is a sorting algorithm that follows the divide-and-conquer approach. it recursively divides the array into smaller subarrays based on a chosen pivot element and then sorts those subarrays.
+
+takeshe time complexity of the quick-sort algorithm is typically expressed as O(N log N) in the average and best cases. 
+however, in the worst case scenario, where the pivot is consistently chosen as the smallest or largest element, the time complexity can degrade to O(n^2). this occurs when the array is already sorted or nearly sorted, and the partitioning step consistently creates highly imbalanced subarrays.
+
+the space complexity of quick-sort is generally O(log N) in the average and best cases. this is because the algorithm uses recursion to divide the array into subarrays, and the maximum depth of the recursion is logarithmic in the size of the array. 
+each recursive call requires a constant amount of additional space for storing the pivot and temporary variables.
+
+algorithm:
+    procedure quickSort(arr[], low, high)
+        if (low < high)
+            pivot = partition(arr, low, high)
+            quickSort(arr, low, pivot -  1)
+            quickSort(arr, pivot +  1, high)
+    end procedure
+
+    procedure partition(arr[], low, high)
+        pivot = arr[low]
+        low +=  1
+        high -=  1
+        while (low <= high)
+            while (arr[high] > pivot)
+                high -=  1
+            end while
+            while (low <= high && arr[low] <= pivot)
+                low +=  1
+            end while
+            if (low <= high)
+                swap arr[low] and arr[high]
+            end if
+        end while
+        swap arr[low] and arr[high]
+        return low
+    end procedure
+

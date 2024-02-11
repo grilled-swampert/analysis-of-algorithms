@@ -1,0 +1,33 @@
+merge sort is a divide-and-conquer algorithm that repeatedly splits an array into two halves, sorts them, and then merges them back together. it's efficient for large datasets due to its O(N log N) time complexity across all cases (best, average, worst).
+
+the time complexity of merge sort is O(N log N) because it divides the array log N times and merges N elements each time. 
+the space complexity is O(N) since it requires additional space to hold the temporary arrays during the merge process.
+
+algorithm:
+    mergeSort(arr):
+        if length of arr is less than or equal to 1:
+            return arr
+        
+        mid = length of arr divided by 2
+        left = mergeSort(first half of arr)
+        right = mergeSort(second half of arr)
+        
+        return merge(left, right)
+
+    merge(left, right):
+        result = empty array
+        i = 0
+        j = 0
+        
+        while i is less than length of left and j is less than length of right:
+            if left[i] is less than right[j]:
+                append left[i] to result
+                increment i
+            else:
+                append right[j] to result
+                increment j
+        
+        append remaining elements of left (if any) to result
+        append remaining elements of right (if any) to result
+        
+        return result

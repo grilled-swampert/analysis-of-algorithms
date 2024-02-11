@@ -1,0 +1,20 @@
+recursive binary search is a divide-and-conquer algorithm that repeatedly splits a sorted list in half until the searched item is found. if the list's midpoint is the item, the search ends; otherwise, the item must lie in the half that doesn't contain the midpoint, so that half is recursively searched.
+
+the time complexity is O(log N) in all cases: best, average, and worst. this is because with each recursive call, the size of the search space is halved, leading to a logarithmic number of steps.
+the space complexity is O(log N) due to the recursive call stack. each recursive call adds a level to the stack, and in the worst case, the maximum depth of the recursion tree is log N, hence the space complexity is O(log N).
+
+algorithm:
+    RecursiveBinarySearch(array, key, low, high, count):
+        Process:
+            if low <= high then
+                set mid to (low + high) /  2
+                increment count by  1
+                if key equals array[mid] then
+                    print "Key found at position: " + (mid +  1)
+                else if key is less than array[mid] then
+                    call RecursiveBinarySearch(array, key, low, mid -  1, count)
+                else
+                    call RecursiveBinarySearch(array, key, mid +  1, high, count)
+            else
+                print "Key not found"
+        End of Process
