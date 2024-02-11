@@ -1,0 +1,51 @@
+the recursive MaxMin is a recursive algorithm that finds the maximum and minimum values within a global array segment defined by indices i and j. 
+it uses a divide-and-conquer approach, where the array is split into two halves, and the function is called recursively on each half. 
+the maximum and minimum values are updated based on the results of the two halves.
+
+the time complexity of a divide-and-conquer algorithm like this one is typically O(n log n), where n is the number of elements being processed. 
+this is because the problem size is halved at each level of recursion, leading to a binary tree of levels log n, and at each level, we perform a linear amount of work proportional to the size of the subproblem. 
+however, since the function is designed to find the maximum and minimum in a single pass, the actual time complexity is closer to O(n), as each element is visited exactly once.
+
+the space complexity of this function is O(log n) due to the recursion stack. 
+each recursive call adds a new frame to the stack, and the depth of the recursion is log n because the problem size is halved at each level. 
+since the function does not use any other data structures that grow with the input size, the space complexity is dominated by the recursion stack.
+
+in summary, the time complexity of the recursiveMaxMin function is O(n), and the space complexity is O(log n).
+
+algorithm: (more like a psuedocode)
+    Function recursiveMaxMin(i, j, max, min, count)
+        // Base Case: When the array has only one element
+        If i equals j Then
+            Set max to globalArray[i]
+            Set min to globalArray[i]
+            Return
+        End If
+
+        // Base Case: When the array has two elements
+        If i equals (j -  1) Then
+            If globalArray[i] is less than globalArray[j] Then
+                Set max to globalArray[j]
+                Set min to globalArray[i]
+            Else
+                Set max to globalArray[i]
+                Set min to globalArray[j]
+            End If
+            Return
+        End If
+
+        // Recursive Step: Divide the problem into smaller subproblems
+        Declare local variables max1, min1
+        Calculate mid as the average of i and j
+        Increment count by  1
+        Call recursiveMaxMin(i, mid, max, min, count)
+        Call recursiveMaxMin(mid +  1, j, max1, min1, count)
+
+        // Combine the results from the subproblems
+        If max is less than max1 Then
+            Set max to max1
+        End If
+        If min is greater than min1 Then
+            Set min to min1
+        End If
+    End Function
+

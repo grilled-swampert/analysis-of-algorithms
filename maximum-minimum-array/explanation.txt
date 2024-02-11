@@ -1,0 +1,18 @@
+the min-max algorithm is a technique for finding the smallest and largest elements in an array. 
+one approach is to sort the array and then select the first and last elements as the minimum and maximum. 
+another approach involves iterating through the array once, comparing each element to the current minimum and maximum, updating them as needed.
+
+iterating through an array once, comparing each element to the current minimum and maximum, and updating them as needed has a time complexity of O(n), where n is the number of elements in the array. 
+this is because each element in the array is visited exactly once. 
+the space complexity is O(1), as only a constant amount of extra space is required to store the minimum and maximum values, regardless of the size of the input array.
+
+algorithm:
+    1. initialize variables min and max to the first element of the array.
+    2. iterate through the array from the second element to the last element.
+    3. for each element in the array:
+        a. if the element is smaller than the current min, update min to the element.
+        b. if the element is larger than the current max, update max to the element.
+    4. after iterating through the entire array, min will contain the smallest element and max will contain the largest element.
+    5. return min and max as the minimum and maximum values of the array.
+
+

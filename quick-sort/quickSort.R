@@ -7,7 +7,7 @@ plot(sizes, times, main="Size vs Time", xlab="Size", ylab="Time (seconds)", pch=
 lines(sizes, times, col="orange", type="l")
 grid()
 
-plot(x, y, main="n * log10(n)", xlab="x", ylab="y", type="l", col="blue", lwd=2)
+plot(x, y, main="n * log(n)", xlab="x", ylab="y", type="l", col="blue", lwd=2)
 grid()
 
 par(mfrow = c(1, 1))
