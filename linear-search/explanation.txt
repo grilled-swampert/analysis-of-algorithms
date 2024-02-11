@@ -1,0 +1,11 @@
+linear search, also known as sequential search, is a search algorithm that checks each element in the list sequentially until a match is found or the whole list has been searched.
+
+the time complexity of linear search is O(n), where n is the number of elements in the list. this is because, in the worst case, the algorithm will have to examine every element in the list before determining that the target element is not present.
+the space complexity of linear search is O(1), meaning it uses a constant amount of additional memory. no matter how large the list is, the extra memory required does not change.
+
+algorithm:
+    function linear_search(list, target):
+        for each item in list:
+            if item is equal to target:
+                return index of item
+        return "item not found"

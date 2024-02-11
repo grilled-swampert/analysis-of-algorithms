@@ -1,0 +1,20 @@
+binary search is a search algorithm used on a sorted array by repeatedly dividing the search interval in half. it compares the target value to the middle element of the array, and if they are not equal, the half in which the target cannot lie is eliminated, reducing the search space to the remaining half.
+
+the time complexity of binary search is O(log N), which is much better than linear search for large datasets, because it halves the search space at each step. 
+the space complexity is O(1) for the iterative version since it only uses a fixed amount of space to store the indices and does not require any additional storage proportional to the input size.
+
+algorithm:
+    procedure iterativeBinarySearch(A : sorted list of items, x : item to find)
+        left =  0
+        right = length(A) -  1
+        while left <= right
+            mid = (left + right) /  2
+            if A[mid] == x
+                return mid
+            else if A[mid] < x
+                left = mid +  1
+            else
+                right = mid -  1
+        end while
+        return -1 // x is not found in A
+    end procedure

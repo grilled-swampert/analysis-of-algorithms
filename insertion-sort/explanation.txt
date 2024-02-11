@@ -1,0 +1,18 @@
+insertion sort is a simple sorting algorithm that builds a sorted list one item at a time, comparing each new item to the items already in the list and inserting it at the proper position.
+
+best Time Complexity: O(N) - occurs when the input list is already sorted.
+worst Time Complexity: O(N^2) - occurs when the input list is sorted in reverse order.
+the space complexity of insertion sort is O(1), which means it uses a constant amount of memory space.
+
+algorithm:
+    procedure insertionSort(A : list of sortable items)
+        for i =  2 to length(A)
+            key = A[i]
+            j = i -  1
+            while j >  0 and A[j] > key
+                A[j +  1] = A[j]
+                j = j -  1
+            end while
+            A[j +  1] = key
+        end for
+    end procedure
