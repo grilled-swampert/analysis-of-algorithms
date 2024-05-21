@@ -3,6 +3,8 @@
 
 using namespace std;
 
+vector<int> x(100, 0); 
+
 bool isSafe(int board[100][100], int row, int col, int n) {
     for (int i = 0; i < col; i++)
         if (board[row][i])
@@ -19,39 +21,37 @@ bool isSafe(int board[100][100], int row, int col, int n) {
     return true;
 }
 
-bool solveNQUtil(int board[100][100], int col, int n, vector<int>& positions, int& count) {
+bool solveNQUtil(int board[100][100], int col, int n) {
     if (col >= n) {
-        //for (int i = 0; i < n; i++) {
-        //    cout << positions[i] << " ";
-        //}
-        cout << endl;
-        count++;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++)
+                cout << board[i][j] << " ";
+            cout << endl;
+        }
+        cout << "-----------------" << endl; 
         return true; 
     }
 
     for (int i = 0; i < n; i++) {
         if (isSafe(board, i, col, n)) {
             board[i][col] = 1;
-            positions[col] = i+1; 
+            solveNQUtil(board, col + 1, n);
 
-            solveNQUtil(board, col + 1, n, positions, count);
             board[i][col] = 0; 
         }
     }
-    return false;
+
+    return false; 
 }
 
-void solveNQ(int n, int& count) {
+void solveNQ(int n) {
     int board[100][100] = {0};
-    vector<int> positions(n, -1); 
 
-    solveNQUtil(board, 0, n, positions, count);
+    solveNQUtil(board, 0, n);
 }
 
 int main() {
     int n = 6; 
-    int count = 0;
-    solveNQ(n, count);
-    cout << "Number of solutions: " << count << endl;
-    return 0; 
+    solveNQ(n);
+    return 0;
 }
