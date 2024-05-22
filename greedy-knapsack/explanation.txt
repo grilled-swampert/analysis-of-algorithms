@@ -1,0 +1,45 @@
+the greedy knapsack problem is a variation of the classic knapsack problem, which is a common problem in combinatorial optimization. 
+the objective is to maximize the total value of items that can be carried in a knapsack of fixed capacity. 
+
+in the classic knapsack problem, you are given:
+    -   a set of items, each with a weight and a value.
+    -   a knapsack with a maximum weight capacity.
+the goal is to determine the number of each item to include in the knapsack so that the total weight does not exceed the knapsack's capacity and the total value is maximized.
+the greedy approach to the knapsack problem specifically deals with the fractional knapsack problem, where you can take fractions of items rather than having to include or exclude entire items. 
+
+pseudocode:
+function greedyKnapsack(m, objects)
+    // Calculate profit-to-weight ratio for each object
+    for each object in objects
+        object.ratio = object.profit / object.weight
+    
+    // Sort objects by ratio in non-increasing order
+    sort(objects by ratio in descending order)
+
+    // Initialize solution vector x and remaining capacity U
+    initialize x to all zeros
+    U = m
+
+    // Fill the knapsack
+    for i from 0 to number of objects - 1
+        if objects[i].weight > U
+            x[i] = U / objects[i].weight
+            break
+        x[i] = 1.0
+        U = U - objects[i].weight
+
+    // Calculate total profit
+    totalProfit = 0.0
+    for i from 0 to number of objects - 1
+        totalProfit = totalProfit + x[i] * objects[i].profit
+
+    // Output total profit
+    print totalProfit
+
+// Main function
+// initialise weights, profits of the objects and knapsack size
+
+for each object in objects
+    object.ratio = object.profit / object.weight
+
+greedyKnapsack(m, objects)
