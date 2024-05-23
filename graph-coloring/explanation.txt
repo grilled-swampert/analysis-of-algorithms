@@ -1,0 +1,49 @@
+graph coloring is a way of assigning colors to the vertices of a graph such that no two adjacent vertices share the same color.
+
+steps:
+    initialization: start with an uncolored graph.
+    vertex selection: choose a vertex and assign it the first color.
+    color assignment: move to the next vertex and assign it the lowest numbered color that has not been used by its adjacent vertices.
+    repetition: repeat the process for all vertices in the graph.
+
+pseudocode:
+Function isSafe(graph, color, v, c):
+    For i from 0 to graph[v].size() - 1:
+        If graph[v][i] == 1 AND color[i] == c:
+            Return false
+    Return true
+
+Function graphColoringUtil(graph, m, color, v):
+    If v == graph.size():
+        For i from 0 to graph.size() - 1:
+            Print color[i]
+        Print newline
+        Return true
+    
+    For c from 1 to m:
+        If isSafe(graph, color, v, c):
+            color[v] = c
+
+            If graphColoringUtil(graph, m, color, v + 1):
+                # Found a valid coloring, continue searching
+
+            color[v] = 0
+    Return false
+
+Function graphColoring(graph, m):
+    V = graph.size()
+    Initialize color as a list of size V with all values 0
+
+    Call graphColoringUtil(graph, m, color, 0)
+
+Function main():
+    Initialize graph as a V x V matrix with all values 0
+
+    Print "Enter the adjacency matrix:"
+    For i from 0 to V - 1:
+        For j from 0 to V - 1:
+            Read graph[i][j]
+
+    Get the chromatic number (m).
+
+    Call graphColoring(graph, m)
