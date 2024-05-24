@@ -47,3 +47,4 @@ Function main():
     Get the chromatic number (m).
 
     Call graphColoring(graph, m)
+
