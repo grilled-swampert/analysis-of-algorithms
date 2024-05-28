@@ -1,0 +1,12 @@
+The "sum of subsets" problem is a classic problem in computer science and combinatorial optimization. It involves finding all possible subsets of a given set of numbers that add up to a specific target sum.
+
+Approaches to Solve the Problem
+1. Backtracking:
+    Backtracking is a general algorithm for finding solutions to computational problems by incrementally building candidates to the solutions, and abandoning a candidate ("backtracking") as soon as it is determined that the candidate cannot possibly be completed to a valid solution.
+    The idea is to explore each subset, keep track of the current subset sum, and backtrack if the current subset sum exceeds the target sum.
+2. Dynamic Programming:
+    This approach involves using a table to store solutions to subproblems and building up the solution to the overall problem from these subproblems.
+    The idea is similar to the subset-sum problem, where we determine if a sum can be formed using subsets of the given set.
+
+The code given here is of backtracking approach.
+
