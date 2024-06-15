@@ -1,0 +1,23 @@
+What is a Subsequence?
+Imagine you have a string of letters, like "abcde". A subsequence is any sequence that can be derived from this string by deleting some or no characters without changing the order of the remaining characters. 
+For example:
+    "ace" is a subsequence of "abcde" (we removed 'b' and 'd').
+    "abc" is a subsequence (we didn't remove any characters).
+    "de" is also a subsequence.
+
+What is the Longest Common Subsequence?
+Now, let's say we have two strings:
+    String 1: "abcde"
+    String 2: "ace"
+The Longest Common Subsequence (LCS) is the longest sequence that can be found in both strings by deleting some or no characters without reordering the remaining characters. 
+For our example:
+    The LCS of "abcde" and "ace" is "ace".
+
+Algorithm for LCS:
+    function LCS(str01, str02, m, n)
+        if m == 0 or n == 0
+            return 0
+        if str01[m - 1] == str02[n - 1]
+            return 1 + LCS(str01, str02, m - 1, n - 1)
+        else
+            return max(LCS(str01, str02, m, n - 1), LCS(str01, str02, m - 1, n))
