@@ -1,0 +1,39 @@
+The Basics of Matrix Multiplication:
+
+    Matrix Size Compatibility:
+    You can only multiply two matrices if the number of columns in the first matrix (A) is the same as the number of rows in the second matrix (B). So if 
+    A is a 2×3 matrix, B must be a 3×2 matrix or a 3×n matrix.
+    For example, if A is 2×3 and B is 3×2, the result will be a 2×2 matrix.
+
+    Multiplication Rule:
+
+    To find the element in the first row and first column of the new matrix, you multiply each element in the first row of A by the corresponding element in the first column of B and add them up.
+
+Matrix Multiplication combines two matrices to create a new matrix where each element represents a sum of products of corresponding elements from rows of the first matrix and columns of the second matrix.
+
+Pseudocode:
+function matrix_chain_order(p):
+    n = length(p) - 1
+    minimum_cost = 2D array of size (n+1)x(n+1) initialized to 0
+    partition = 2D array of size (n+1)x(n+1) initialized to 0
+
+    for l from 2 to n:
+        for i from 1 to n-l+1:
+            j = i + l - 1
+            minimum_cost[i][j] = infinity
+            for k from i to j-1:
+                q = minimum_cost[i][k] + minimum_cost[k+1][j] + p[i-1]*p[k]*p[j]
+                if q < minimum_cost[i][j]:
+                    minimum_cost[i][j] = q
+                    partition[i][j] = k
+
+    return (minimum_cost, partition)
+
+function print_optimal_parenthesization(partition, i, j):
+    if i == j:
+        print "A" + i
+    else:
+        print "("
+        print_optimal_parenthesization(partition, i, partition[i][j])
+        print_optimal_parenthesization(partition, partition[i][j] + 1, j)
+        print ")"
