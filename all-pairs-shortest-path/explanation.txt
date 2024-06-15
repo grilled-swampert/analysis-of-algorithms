@@ -1,0 +1,10 @@
+Imagine you have a map of a city with several locations, and you want to find the shortest route between every pair of locations. The All-Pairs Shortest Path (APSP) is like a magical guidebook that tells you the shortest route between any two locations on that map.
+
+Function floydWarshal():
+  Initialize cost matrix with values from costMat
+
+  For k from 0 to NODE-1:
+    For i from 0 to NODE-1:
+      For j from 0 to NODE-1:
+        If cost[i][k] + cost[k][j] < cost[i][j]:
+          Update cost[i][j] to cost[i][k] + cost[k][j]
